@@ -6,9 +6,9 @@
   "scripts": {
     "test": "aegir test -t node -t browser -t webworker -t electron-main -t electron-renderer",
     "lint": "aegir lint",
-    "release": "aegir release --docs",
-    "release-minor": "aegir release --type minor --docs",
-    "release-major": "aegir release --type major --docs"
+    "release": "aegir release",
+    "release-minor": "aegir release --type minor",
+    "release-major": "aegir release --type major"
   },
   "author": "",
   "license": "ISC",
