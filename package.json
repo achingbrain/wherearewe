@@ -2,10 +2,13 @@
   "name": "wherearewe",
   "version": "0.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "aegir test -t node -t browser -t webworker -t electron-main -t electron-renderer",
-    "lint": "aegir lint"
+    "lint": "aegir lint",
+    "release": "aegir release --docs",
+    "release-minor": "aegir release --type minor --docs",
+    "release-major": "aegir release --type major --docs"
   },
   "author": "",
   "license": "ISC",

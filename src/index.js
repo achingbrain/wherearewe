@@ -1,4 +1,5 @@
 'use strict'
+
 const isElectron = require('is-electron')
 
 const IS_ENV_WITH_DOM = typeof window === 'object' && typeof document === 'object' && document.nodeType === 9
