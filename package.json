@@ -1,0 +1,18 @@
+{
+  "name": "wherearewe",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "aegir test -t node -t browser -t webworker -t electron-main -t electron-renderer",
+    "lint": "aegir lint"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "is-electron": "^2.2.0"
+  },
+  "devDependencies": {
+    "aegir": "^26.0.0"
+  }
+}
