@@ -2,7 +2,7 @@
 
 /* eslint-env mocha */
 const { expect } = require('aegir/utils/chai')
-const env = require('../')
+const env = require('../src')
 
 describe('env', function () {
   it('isElectron should have the correct value in each env', function () {

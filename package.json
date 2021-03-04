@@ -4,6 +4,7 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
+    "prepare": "aegir build --no-bundle",
     "test": "aegir test -t node -t browser -t webworker -t electron-main -t electron-renderer",
     "lint": "aegir lint",
     "release": "aegir release",
@@ -16,6 +17,7 @@
     "is-electron": "^2.2.0"
   },
   "devDependencies": {
-    "aegir": "^26.0.0"
-  }
+    "aegir": "^31.0.3"
+  },
+  "types": "./dist/index.d.ts"
 }
