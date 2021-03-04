@@ -22,7 +22,6 @@
   "types": "./dist/src/index.d.ts",
   "files": [
     "src",
-    "dist",
-    "tsconfig.json"
+    "dist"
   ]
 }
