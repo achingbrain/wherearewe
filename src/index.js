@@ -14,7 +14,8 @@ const IS_NODE = typeof require === 'function' && typeof globalThis.process !== '
 // @ts-ignore
 // eslint-disable-next-line no-undef
 const IS_WEBWORKER = typeof importScripts === 'function' && typeof self !== 'undefined' && typeof WorkerGlobalScope !== 'undefined' && self instanceof WorkerGlobalScope
-const IS_TEST = typeof globalThis.process !== 'undefined' && typeof globalThis.process.env !== 'undefined' && globalThis.process.env.NODE_ENV === 'test'
+// defeat bundlers replacing process.env.NODE_ENV with "development" or whatever
+const IS_TEST = typeof globalThis.process !== 'undefined' && typeof globalThis.process.env !== 'undefined' && globalThis.process.env['NODE' + (() => '_')() + 'ENV'] === 'test'
 const IS_REACT_NATIVE = typeof navigator !== 'undefined' && navigator.product === 'ReactNative'
 
 module.exports = {
