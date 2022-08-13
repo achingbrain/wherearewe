@@ -1,7 +1,7 @@
 {
   "name": "wherearewe",
   "version": "1.0.2",
-  "description": "",
+  "description": "Detect the current environment",
   "author": "",
   "license": "Apache-2.0 OR MIT",
   "homepage": "https://github.com/achingbrain/wherearewe#readme",

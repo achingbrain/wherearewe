@@ -3,7 +3,7 @@
 [![codecov](https://img.shields.io/codecov/c/github/achingbrain/wherearewe.svg?style=flat-square)](https://codecov.io/gh/achingbrain/wherearewe)
 [![CI](https://img.shields.io/github/workflow/status/achingbrain/wherearewe/test%20&%20maybe%20release/master?style=flat-square)](https://github.com/achingbrain/wherearewe/actions/workflows/js-test-and-release.yml)
 
->
+> Detect the current environment
 
 ## Table of contents <!-- omit in toc -->
 
@@ -21,7 +21,7 @@ $ npm i wherearewe
 ## Usage
 
 ```javascript
-const where = require('wherearewe')
+import * as where from 'wherearewe'
 
 console.info(where)
 // {
