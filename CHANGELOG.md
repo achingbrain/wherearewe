@@ -1,3 +1,14 @@
+## [2.0.0](https://github.com/achingbrain/wherearewe/compare/v1.0.2...v2.0.0) (2022-08-13)
+
+
+### ⚠ BREAKING CHANGES
+
+* this module is now ESM only
+
+### Features
+
+* publish as ESM ([#25](https://github.com/achingbrain/wherearewe/issues/25)) ([361f05b](https://github.com/achingbrain/wherearewe/commit/361f05b94534fe67ae1ddfb5838ba8851d039412))
+
 ### [1.0.2](https://github.com/achingbrain/wherearewe/compare/v1.0.1...v1.0.2) (2022-03-21)
 
 
