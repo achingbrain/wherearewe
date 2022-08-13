@@ -1,34 +1,19 @@
-'use strict'
+import detectElectron from 'is-electron'
 
-/** @type {() => boolean} */
-// @ts-ignore
-const isElectron = require('is-electron')
+export const isEnvWithDom = typeof window === 'object' && typeof document === 'object' && document.nodeType === 9
+export const isElectron = detectElectron()
 
-const IS_ENV_WITH_DOM = typeof window === 'object' && typeof document === 'object' && document.nodeType === 9
-
-const IS_ELECTRON = isElectron()
-const IS_BROWSER = IS_ENV_WITH_DOM && !IS_ELECTRON
-const IS_ELECTRON_MAIN = IS_ELECTRON && !IS_ENV_WITH_DOM
-const IS_ELECTRON_RENDERER = IS_ELECTRON && IS_ENV_WITH_DOM
-const IS_NODE = typeof require === 'function' && typeof globalThis.process !== 'undefined' && typeof globalThis.process.release !== 'undefined' && globalThis.process.release.name === 'node' && !IS_ELECTRON
+/**
+ * Detects browser main thread  **NOT** web worker or service worker
+ */
+export const isBrowser = isEnvWithDom && !isElectron
+export const isElectronMain = isElectron && !isEnvWithDom
+export const isElectronRenderer = isElectron && isEnvWithDom
+export const isNode = typeof globalThis.process !== 'undefined' && typeof globalThis.process.release !== 'undefined' && globalThis.process.release.name === 'node' && !isElectron
 // @ts-ignore
 // eslint-disable-next-line no-undef
-const IS_WEBWORKER = typeof importScripts === 'function' && typeof self !== 'undefined' && typeof WorkerGlobalScope !== 'undefined' && self instanceof WorkerGlobalScope
-// defeat bundlers replacing process.env.NODE_ENV with "development" or whatever
-const IS_TEST = typeof globalThis.process !== 'undefined' && typeof globalThis.process.env !== 'undefined' && globalThis.process.env['NODE' + (() => '_')() + 'ENV'] === 'test'
-const IS_REACT_NATIVE = typeof navigator !== 'undefined' && navigator.product === 'ReactNative'
+export const isWebWorker = typeof importScripts === 'function' && typeof self !== 'undefined' && typeof WorkerGlobalScope !== 'undefined' && self instanceof WorkerGlobalScope
 
-module.exports = {
-  isTest: IS_TEST,
-  isElectron: IS_ELECTRON,
-  isElectronMain: IS_ELECTRON_MAIN,
-  isElectronRenderer: IS_ELECTRON_RENDERER,
-  isNode: IS_NODE,
-  /**
-   * Detects browser main thread  **NOT** web worker or service worker
-   */
-  isBrowser: IS_BROWSER,
-  isWebWorker: IS_WEBWORKER,
-  isEnvWithDom: IS_ENV_WITH_DOM,
-  isReactNative: IS_REACT_NATIVE
-}
+// defeat bundlers replacing process.env.NODE_ENV with "development" or whatever
+export const isTest = typeof globalThis.process !== 'undefined' && typeof globalThis.process.env !== 'undefined' && globalThis.process.env['NODE' + (() => '_')() + 'ENV'] === 'test'
+export const isReactNative = typeof navigator !== 'undefined' && navigator.product === 'ReactNative'
