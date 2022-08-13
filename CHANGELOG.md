@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/achingbrain/wherearewe/compare/v2.0.0...v2.0.1) (2022-08-13)
+
+
+### Bug Fixes
+
+* update tsconfig to not generate redundant file ([#26](https://github.com/achingbrain/wherearewe/issues/26)) ([6766779](https://github.com/achingbrain/wherearewe/commit/67667793b8541809547299a9460ac6875865fb5c))
+
 ## [2.0.0](https://github.com/achingbrain/wherearewe/compare/v1.0.2...v2.0.0) (2022-08-13)
 
 
